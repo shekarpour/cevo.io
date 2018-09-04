@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xmlns:owl="http://www.w3.org/2002/07/owl#"
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:olo="http://purl.org/ontology/olo/core#"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+typeof="bibo:Document"
+about=""
+version="XHTML+RDFa 1.0">
+
+<style type="text/css">
+          table {
+            border-collapse:collapse;
+          }
+          td, th {
+            border:1px solid black;
+            padding:1em;
+          }  
+          table#namespaces td {
+            font-family: monospace;
+          }
+          table.definition {
+            width:100%;
+          }
+          table.definition td.prop {
+            width:10em;
+          }
+          pre {
+                padding: 1em;
+                border: 1px dashed #2f6fab;
+                color: black;
+                background-color: #f9f9f9;
+                line-height: 1.1em;
+         }
+  </style>
+  
+  
+  
+   <style>
+    /* --- EXAMPLES --- */
+    
+    div.example-title {
+      min-width: 7.5em;
+      color: #b9ab2d;
+    }
+    
+    div.example-title span {
+      text-transform: uppercase;
+    }
+    
+    aside.example,
+    div.example,
+    div.illegal-example {
+      padding: 0.5em;
+      margin: 1em 0;
+      position: relative;
+      clear: both;
+    }
+    
+    div.illegal-example {
+      color: red
+    }
+    
+    div.illegal-example p {
+      color: black
+    }
+    
+    aside.example,
+    div.example {
+      padding: .5em;
+      border-left-width: .5em;
+      border-left-style: solid;
+      border-color: #e0cb52;
+      background: #fcfaee;
+    }
+    
+    aside.example div.example {
+      border-left-width: .1em;
+      border-color: #999;
+      background: #fff;
+    }
+    
+    aside.example div.example div.example-title {
+      color: #999;
+    }
+  </style>
+
+<head>
+  <title about="http://eventontology.org/" property="dc:title">The Comprehensive Event Ontology (CEVO) Specification</title>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+  <base href="" />
+  
+  <link href="http://smiy.sourceforge.net/css/xmlns-style.css" rel="stylesheet"  type="text/css" />
+  <link href="http://smiy.sourceforge.net/css/style.css" rel="stylesheet"  type="text/css" />
+  <link href="http://www.csw.inf.fu-berlin.de/ontdocu/specgen/groups.css" rel="stylesheet"  type="text/css" />
+  
+  <link about="%ns%" typeof="owl:Ontology" rel="dc:creator" href="foaflink" />
+  <link about="%ns%" rel="dc:creator" href="foaflink" />
+  <link about="%specurl%" rel="dc:creator" href="foaflink" />
+  <link about="%specurl%" rel="foaf:primaryTopic" rev="foaf:isPrimaryTopicOf" href="%ns%" />
+
+  
+
+</head>
+
+<body>
+  <h1><span about="%ns%" property="dc:title">The Comprehensive Event Ontology (CEVO) Specification </span> <span about="http://eventontology.org/" property="owl:versionInfo" datatype="xsd:decimal"></span></h1>
+
+<table class="header" border="0">
+  <tr>
+    <td>
+		<dl about="%specurl%">
+			<dt>This version:</dt>
+			<dd><a rel="dc:hasVersion" 
+				rev="dc:isVersionOf" href="http://eventontology.org/">http://eventontology.org/1.0</a> </dd>
+
+			<dt>Latest version:</dt>
+			<dd><a href="http://eventontology.org/">http://eventontology.org/1.0</a> </dd>
+
+			
+			<dt>Authors:</dt>
+			<dd><a rel="rdfs:seeAlso" href="http://shekarpour.org/">Saeedeh Shekarpour </a> <br/>
+			
+			
+		</dl>
+
+	
+	</td>
+    <td align="right">
+					<img src="images/CEVO.jpg" width="200" alt="cevo" />
+				</td>
+		
+  </tr>
+</table>
+
+  <div about="%specurl%" rel="dc:conformsTo"
+     resource="http://www.w3.org/TR/rdfa-syntax"></div>
+  <p>
+   
+
+  <!-- Creative Commons License -->
+  <a href="http://creativecommons.org/licenses/by/1.0/"><img alt=
+  "Creative Commons License" style="border: 0; float: right; padding: 5px;" src=
+  "http://i.creativecommons.org/l/by/3.0/88x31.png" /></a> 
+  This work is licensed under a <a about="%specurl%" rel="license dc:license" href= 
+  "https://creativecommons.org/licenses/by/4.0/" title="Creative Commons
+  Attribution License">Creative Commons
+  Attribution 4.0 International (CC By 4.0)</a>. This copyright applies to the <em>CEVO Specification and Ontology</em> 
+  and accompanying documentation in RDF.
+  
+  <hr />
+
+
+<h2 id="sec-status">Abstract</h2>
+<p about="%ns%" property="dc:description">
+While the general analysis of named entities has received substantial research attention, the analysis of relations over named entities has not.  In fact, a review of the literature on unstructured as well as structured data revealed a deficiency in research on the abstract conceptualization required to organize  relations.  
+We believe that such an abstract conceptualization can benefit various communities and applications 
+such as natural language processing, information extraction, machine learning and ontology engineering.
+Thus, herein we present CEVO (i.e., a comprehensive event ontology) built on 
+Levin's conceptual hierarchy of English verbs that categorizes verbs with the shared meaning and syntactic behavior. 
+We present the fundamental concepts and requirements for this ontology.
+</p>
+
+ 
+<h2>Table of Contents</h2>
+
+<div class="toc">
+<ul>
+  <li><a href="#h2-Levin-Hierarchy"><span class="secno">1. </span>Levin Conceptual Hierarchy</a> </li>
+  
+  <li><a href="#h2-CEVO-Overview"><span class="secno">2. </span>Overview of CEVO</a> 
+    <ul>
+      <li><a href="#h2-CEVO-Schema"><span class="secno">2.1 </span>CEVO Schema Level</a></li>
+    </ul>
+    <ul>
+      <li><a href="#h2-CEVO-Individual"><span class="secno">2.2 </span>CEVO Instance Level</a></li>
+    </ul>
+  </li>
+  
+  <li><a href="#h2-UseCases"><span class="secno">3. </span>Use Cases of CEVO</a> 
+    <ul>
+      <li><a href="#h2-Annotating-Relations-Text"><span class="secno">3.1 </span>Annotating Relations in Text</a></li>
+    </ul>
+    <ul>
+      <li><a href="#h2-Annotating-Properties-Ontologies"><span class="secno">3.2 </span>Annotating Properties of Ontologies</a></li>
+    </ul>
+     <ul>
+      <li><a href="#h2-Linking-Relations"><span class="secno">3.3 </span>Linking Relations</a></li>
+    </ul>  
+  </li>
+  
+   <li><a href="#h2-NameSpaces"><span class="secno">5. </span>Name Spaces</a> </li>
+ 
+  <li><a href="#h2_acknowledgements"><span class="secno">A.
+    </span>Acknowledgements</a></li>
+  <li><a href="#sec-refrences"><span class="secno">B. </span>References</a> </li>
+</ul>
+</div>
+
+
+<section id=Levin-Hierarchy class=informative>
+<h2 id="h2-Levin-Hierarchy"><span class="secno">1. </span>Levin Conceptual Hierarchy</h2>
+
+ <p>
+ There is an organized lexicon and knowledge base assembled by <a href="http://web.stanford.edu/~bclevin/">the Stanford linguist Beth Levin</a> in [1]. While Levin relies on Schank's conceptual dependency theory [2] to organize this knowledge base, the key here is the psychologically principled inventory of English verbs aligned with the knowledge base. 
+Classes in this knowledge base identify sets of semantically coherent verbs with corresponding syntactic properties.
+ 
+The entries of Levin's lexical knowledge base are verb classes whose members are English verbs having two characteristics:
+(i) semantically coherent and (ii) shared syntactic behavior.
+
+<ul>
+  <li><em><b>(i) Shared meaning:</b></em> Each class of verbs shows a unique set of properties that shape the meaning of the member verbs.
+In fact, the conjunction of properties provides a distinctive meaning for each class. A single meaning property might be attributed to several classes depending upon context.  Moreover, an individual verb might belong to multiple classes, creating a graph instead of a tree. 
+</li>
+  <li><em><b>(ii) Shared syntactic behavior:</b></em> Meaning influences the syntactic behavior of a verb in terms of its expression and interpretation of arguments. Verbs with shared meaning exhibit similar syntactic behavior.
+The following figures illustrates two distinct English verb classes (1) <em><b>transformation and creation</em></b>  and (2) <em><b>change of the state</em></b>  that both subsume several verbs (e.g., cook, boil).
+Thus, depending on the <em><b>context</em></b> of the shared verbs, the appropriate class is distinguished. </li>
+  
+</ul> </p>
+
+  <img src="images/Intersection.jpg"  alt="Cook Verb"  align="center"  />
+ 
+
+
+
+
+<section id=CEVO-Overview class=informative>
+<h2 id="h2-CEVO-Overview"><span class="secno">2. </span>CEVO Overview</h2>
+<p>
+In the following, we present the main concepts introduced in the schema of CEVO,
+and individual verbs associated with events. 
+</p>
+
+ 
+<section id=CEVO-Schema class=informative>
+<h2 id="h2-CEVO-Schema"><span class="secno">2.1 </span>CEVO Schema</h2>
+
+<p>
+The core class of <em>CEVO</em> is the class of <em>Generic Event</em> that is the superclass of all specific events. This generic Event class refers to `occurrence of anything'. It generally is the superclass of any specific type of event.
+The Generic Event class is formally defined as follows: 
+</p>
+ <div id="GEvent">
+          <div class="example">
+            <div class="example-title marker"><span>Class Definition </span><span style="text-transform: none">: Generic Event</span></div><pre class="turtle nohighlight"><span></span>
+<span class="nv">cevo:Event</span>  <span class="w"> </span><span class="kt">a</span><span class="w"> </span>               <span class="nn">owl:</span><span class="nt">Class.</span>
+<span class="nv">cevo:Event</span><span class="w"> </span>  <span class="kt">rdfs:</span>label<span class="w"> </span><span class="nn"></span>     <span class="nt">'event'.</span>
+<span class="nv">cevo:Event</span><span class="w"> </span>  <span class="kt">rdfs:</span>comments<span class="w"> </span><span class="nn"></span>  <span class="nt">'something that happens'.</span>
+ </div>
+ 
+ <p>
+ The Levin conceptual hierarchy is incorporated under the Generic Event class. In other words, any class provided for a set of English verbs revealing a <em>specific event</em> which is considered as an owl:Class. Formally as: Class of `X' Event: `X' Event is a subclass of the class generic Event. 
+ Below the first level of Levin hierarchy is represented. All events of this level are a subclass of the class of generic event.
+ </p>
+<img src="images/EventLevel1.jpg"  alt="First Level of Event Hierarchy"  align="middle" />
+
+
+ <p>
+ Conceptually, each specific event that is associated with an English verb category sharing a common behavior or meaning. For instance, the class communication given below is defined as a subclass of Generic Event. This class refers to occurrence of any activity for communicating or transferring message/idea.
+ </p>
+  <img src="images/communicationGraph.jpg"  alt="Communication Graph"  align="middle" />
+<p>
+The next main class is cevo:MainVerb that refers to words with part of speech as verb. This class is equivalent to the class of main verb of OLiA [4] ontology. OLiA [5] is an annotation model based on morphology.
+</p> 
+
+<div id="MainVerb">
+          <div class="example">
+            <div class="example-title marker"><span>Class Definition </span><span style="text-transform: none">: Main Verb</span></div><pre class="turtle nohighlight"><span></span>
+<span class="nv">cevo:MainVerb</span><span class="w"> </span>  <span class="kt">a</span><span class="w"></span>                    <span class="nn">owl:</span><span class="nt">Class.</span>            
+<span class="nv">cevo:</span><span class="w">MainVerb </span>  <span class="kt">owl:</span><span class="w">equivalentClass</span>  <span class="nn">OLiA:</span><span class="nt">MainVerb.</span>
+ </div>
+
+<section id=CEVO-Individual class=informative>
+<h2 id="h2-CEVO-Individual"><span class="secno">1. </span>CEVO Instance Level</h2>
+
+<p>
+So far, we described the schema level classes; the next important step is to map each individual English verb to the corresponding event class. Thus, we instantiate each English verb at the instance level and type this verb first as cevo:MainVerb and secondly map it to the associated event. In the following, the English verbs <em>cook</em> is presented (i.e., with the type cevo:MainVerb). The apperance of this verb reveals possibility of occurence of two types of events.
+The first event is event of<em> <b>cooking</b></em> which belongs to the abstract class of <b><em>Change of State</em></b> and the second event is <b><em>build</em></b> which belongs to the class of <b><em>Creation and Transformation</em></b>. 
+This hierachy of events for the verb cook is represented below.
+</p>
+  <img src="images/cookVerb.jpg"  alt="Cook Verb"  align="middle" />
+<p>
+In fact, each specific event is associated to all English verbs which may cause occurence of that event.
+For example, English verbs such as demonstrate, tell, explain, read etc may cause the event of <b>Transfer of a Message</b>.
+In the following, the full list of verbs associated to the class Transfer of a Message is represented.  
+</p>
+ <img src="images/transferMessageVerbs.jpg"  alt="Cook Verb"  align="middle" />
+
+
+<section id=UseCases class=informative>
+<h2 id="h2-UseCases"><span class="secno">4. </span>Use Cases of CEVO</h2>
+<p>In the following, we present three use cases which show benefits of CEVO ontology for annotation.
+</p>
+
+
+<section id=UseCases class=informative>
+<h2 id="h2-Annotating-Relations-Text"><span class="secno">4.1 </span>Annotating Relations in Text</h2>
+<p>
+CEVO can promote annotating relations in plain text. Figure 2 shows two head- line news on Twitter. The first tweet was published by BBC and the second one was published by New York Times. Tweet#1 is headed by the verb announce and the tweet#2 is headed by the verb say. Both of these tweets are similar in the sense that a message is transferred. Annotating these two tweets via CEVO enables us to obtain the same tag communication for both of these verbs, whereas the two verbs announce and say do no hold lexical relations such as synonymy.
+</p>
+<img src="images/tweetAnnotation.jpg"  alt="Tweet Annotations"  align="middle" height="150" width="700"/>
+
+
+<h2 id="h2-Annotating-Properties-Ontologies"><span class="secno">4.2 </span>Annotating Properties of Ontologies</h2>
+<p>
+CEVO can be utilized for annotating properties of any ontology. One way of providing such an annotation is using the Web Annotation Data Model (WADM, W3C Working Draft 15 October 2015, [4]) which is a framework for expressing annotations. A WADM annotation has two elements (i) a target which indicates the resource being annotated and (ii) the body which indicates the description. Annotating properties of various ontologies according to CEVO addresses integration and alignment problems. Assume that we have the property <http://dbpedia.org/ontology/spouse> from DBpedia ontology that represents the relation of marrying that is semantically equivalent to the class CEVO:Amalgamate. The annotation of this property is presented in Turtle syntax using WADM framework as follows:
+</p>
+<div id="MainVerb">
+          <div class="example">
+            <div class="example-title marker"><span>Annotating Properties </span><span style="text-transform: none">: Main Verb</span></div><pre class="turtle nohighlight"><span></span>
+<span class="nv">example:annotation1</span><span class="w"> </span>  <span class="kt">a</span><span class="w"></span>                    <span class="nn">oa:</span><span class="nt">Annotation.</span>            
+<span class="nv">example:</span><span class="w">annotation1 </span>  <span class="kt">oa:</span><span class="w">hasTarget</span>  <span class="nn"></span>       <span class="nt">http://dbpedia.org/ontology/spouse. </span>
+<span class="nv">example:</span><span class="w">annotation1 </span>  <span class="kt">oa:</span><span class="w">hasBody</span>           <span class="nn"></span><span class="nt">CEVO:Amalgamate. </span>
+ </div>
+
+
+<h2 id="h2-Linking-Relations"><span class="secno">4.3 </span>Annotating Properties of Ontologies</h2>
+<p>
+CEVO can be utilized for annotating properties of any ontology. One way of providing such an annotation is using the Web Annotation Data Model (WADM, W3C Working Draft 15 October 2015, [4]) which is a framework for expressing annotations. A WADM annotation has two elements (i) a target which indicates the resource being annotated and (ii) the body which indicates the description. Annotating properties of various ontologies according to CEVO addresses integration and alignment problems. Assume that we have the property <http://dbpedia.org/ontology/spouse> from DBpedia ontology that represents the relation of marrying that is semantically equivalent to the class CEVO:Amalgamate. The annotation of this property is presented in Turtle syntax using WADM framework as follows:
+</p>
+
+<div id="MainVerb">
+          <div class="example">
+            <div class="example-title marker"><span>Annotating Properties </span><span style="text-transform: none">: Main Verb</span></div><pre class="turtle nohighlight"><span></span>
+<span class="nv">example:annotation2</span><span class="w"> </span>  <span class="kt">a</span><span class="w"></span>                    <span class="nn">oa:</span><span class="nt">Annotation.</span>            
+<span class="nv">example:</span><span class="w">annotation2 </span>  <span class="kt">oa:</span><span class="w">hasTarget</span>  <span class="nn"></span>       <span class="nt">example:headline1#marry. </span>
+<span class="nv">example:</span><span class="w">annotation2 </span>  <span class="kt">oa:</span><span class="w">hasBody</span>           <span class="nn"></span><span class="nt">CEVO:Amalgamate. </span>
+ </div>
+
+<section id=NameSpaces class=informative>
+<h2 id="h2-NameSpaces"><span class="secno">5. </span>Name Spaces</h2>
+ <p>The namespace for CEVO is
+<code>http://eventontology.org/</code>. CEVO uses
+terms from other vocabularies. A full list of namespaces
+and prefixes used in CEVO is represented in the following table.</p>
+<!-- Alphabetically ordered-->
+ 
+ 
+ 
+ 
+  
+ <table id="namespaces">
+  <thead>
+    <tr>
+      <th>Prefix</th>
+      <th>Namespace</th>
+      <th>Reference</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rdf</td>
+      <td><a
+        href="http://www.w3.org/1999/02/22-rdf-syntax-ns">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a></td>
+      <td>[<cite><a href="#bib-RDF-CONCEPTS"
+        class="bibref">RDF-CONCEPTS</a></cite>]</td>
+    </tr>
+    <tr>
+      <td>rdfs</td>
+      <td><a
+        href="http://www.w3.org/2000/01/rdf-schema">http://www.w3.org/2000/01/rdf-schema#</a></td>
+      <td>[<cite><a href="#bib-RDF-SCHEMA"
+      class="bibref">RDF-SCHEMA</a></cite>]</td>
+    </tr>
+   <tr>
+      <td>dcterms</td>
+      <td><a href="http://purl.org/dc/terms/">http://purl.org/dc/terms/</a></td>
+      <td>[<cite><a href="#bib-DC11" class="bibref">DC11</a></cite>]</td>
+    </tr>
+    <tr>
+      <td>dctype</td>
+      <td><a
+        href="http://purl.org/dc/dcmitype/">http://purl.org/dc/dcmitype/</a></td>
+      <td>[<cite><a href="#bib-DCTYPE" class="bibref">DCTYPE</a></cite>]</td>
+    </tr>
+  
+    
+  </tbody>
+</table>
+ 
+
+ 
+  
+  <h3 id="sec-ack">Acknowledgments</h3>
+  <p>
+  We acknowledge partial support from the National Science
+Foundation (NSF) award: EAR 1520870: Hazards SEES: Social and Physical
+Sensing Enabled Decision Support for Disaster Management and Response. Any
+opinions, findings, and conclusions/recommendations expressed in this material
+are those of the author(s) and do not necessarily reflect the views of the NSF.
+ </p>
+
+ <h3 id="sec-refrences">References </h3>
+<ul>
+  <li>[1] Beth Levin. English Verb Classes and Alternations:A Preliminary Investigation. University of Chicago Press, 1993.</li>
+  
+   <li>[2] R. C. Schank. Conceptual dependency: A theory of natural language processing. 3, 1972. </li>
+  
+  <li>[3] R.C. Schank. Conceptual Information Processing. North-Holland, Amsterdam, 1975.</li>
+  <li> [4] Christian Chiarcos. Ontologies of linguistic annotation: Survey and perspectives. In
+Proceedings of the Eight International Conference on Language Resources and Evaluation
+(LREC’12), Istanbul, Turkey, may 2012. European Language Resources Association
+(ELRA). </li>
+<li> [5] Christian Chiarcos and Maria Sukhareva. Olia - ontologies of linguistic annotation. Semantic Web, 6(4):379–386, 2015. </li>
+</ul>
+</body>
+</html>
+
+
